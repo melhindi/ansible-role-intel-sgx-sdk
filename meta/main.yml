@@ -1,0 +1,17 @@
+galaxy_info:
+  role_name: intel_sgx_sdk
+  author: melhindi
+  description: Install the Intel SGX SDK using the SDK installer as described in the Intel SGX Software Installation Guide For Linux OS
+  license: Apache-2.0
+  min_ansible_version: 2.1
+  platforms:
+    - name: Ubuntu
+      versions:
+      - focal
+
+  galaxy_tags:
+    - intel
+    - sgx
+    - sdk
+
+dependencies: []

@@ -1,0 +1,21 @@
+---
+# tasks file for intel_sgx_sdk
+
+- name: Include variables
+  ansible.builtin.include_vars:
+    file: main.yml
+
+- name: Download SGX SDK installer and make it executable
+  ansible.builtin.get_url:
+    url: "{{ sgx_sdk_url }}"
+    dest: "{{ sgx_sdk_download_path }}"
+    mode: "+x"
+
+- name: Set SGX installer path
+  ansible.builtin.set_fact:
+    sgx_installer_path="{{ sgx_sdk_download_path }}/sgx_linux_x64_sdk_{{ sgx_linux_version }}.{{ sgx_sdk_download_build }}.bin"
+
+- name: Launch SGX SDK installer
+  ansible.builtin.command:
+    cmd: "{{ sgx_installer_path }} --prefix {{ sgx_sdk_install_prefix }}"
+    creates: "{{ sgx_sdk_install_prefix }}/sgxsdk/uninstall.sh"

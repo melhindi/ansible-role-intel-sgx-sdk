@@ -1,0 +1,14 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Load variables
+      include_vars:
+        file: ../../defaults/main.yml
+    - name: Build SampleCode
+      ansible.builtin.shell:
+        cmd: ". {{ sgx_sdk_install_prefix }}/sgxsdk/environment && make SGX_MODE=SIM"
+        chdir: "{{ sgx_sdk_install_prefix }}/sgxsdk/SampleCode/Cxx11SGXDemo"
