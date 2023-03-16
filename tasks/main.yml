@@ -5,6 +5,9 @@
   ansible.builtin.include_vars:
     file: main.yml
 
+- name: Print SGX SDK download path
+  debug: msg="{{ sgx_sdk_url }}"
+
 - name: Download SGX SDK installer and make it executable
   ansible.builtin.get_url:
     url: "{{ sgx_sdk_url }}"
