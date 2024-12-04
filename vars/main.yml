@@ -3,5 +3,5 @@
 
 # The installer name has the folling format: sgx_linux_x64_sdk_{{ sgx_download_version }}.{{ sgx_download_build }}.bin
 sgx_download_distro: "ubuntu{{ ansible_distribution_version }}-server"
-sgx_linux_version: "2.19"
+sgx_linux_version: "2.25"
 sgx_sdk_download_build: "100.3"

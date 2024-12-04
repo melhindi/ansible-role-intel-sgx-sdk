@@ -12,6 +12,10 @@ platforms:
     image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2204}-ansible:latest"
     pre_build_image: true
     privileged: true
+  - name: ubuntu2404
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2404}-ansible:latest"
+    pre_build_image: true
+    privileged: true
 provisioner:
   name: ansible
 verifier:
