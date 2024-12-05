@@ -4,15 +4,15 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: ubuntu2004
+  - name: sgx_ubuntu2004
     image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2004}-ansible:latest"
     pre_build_image: true
     privileged: true
-  - name: ubuntu2204
+  - name: sgx_ubuntu2204
     image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2204}-ansible:latest"
     pre_build_image: true
     privileged: true
-  - name: ubuntu2404
+  - name: sgx_ubuntu2404
     image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2404}-ansible:latest"
     pre_build_image: true
     privileged: true
